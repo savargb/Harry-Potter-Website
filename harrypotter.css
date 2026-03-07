@@ -2,14 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap');
 
 :root {
+    /* Magic Palette */
     --gold: #c9a84c;
     --gold-light: #f0d060;
     --gold-dark: #8b6914;
     --parchment: #f5e6c8;
     --deep-maroon: #3d0000;
-    --dark-bg: #0d0d0d;
     --midnight: #0a0a1a;
-    --smoke: rgba(255, 255, 255, 0.05);
+
+    /* House Colors (Fixed from $ to --) */
+    --g-gold: #ffc500;
+    --g-red: #740001;
+    --s-silver: #aaaaaa;
+    --s-green: #1a472a;
+    --r-bronze: #946b2d;
+    --r-blue: #0e1a40;
+    --h-black: #000000;
+    --h-gold: #ecb939;
 }
 
 * {
@@ -22,375 +31,160 @@ body {
     background-color: var(--midnight);
     font-family: 'IM Fell English', serif;
     min-height: 100vh;
-    overflow-x: hidden;
+    color: var(--parchment);
 }
 
 /* ──────────────────────────────────────────
-   MAGICAL BACKGROUND
+   MAGICAL BACKGROUND & PARTICLES
 ────────────────────────────────────────── */
 .hp-background {
     min-height: 100vh;
     background:
-        radial-gradient(ellipse at 20% 50%, rgba(139, 0, 0, 0.15) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(201, 168, 76, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 80%, rgba(30, 0, 60, 0.4) 0%, transparent 60%),
-        linear-gradient(180deg, #0a0010 0%, #0d0508 40%, #080010 100%);
+        radial-gradient(circle at 50% 50%, rgba(61, 0, 0, 0.2) 0%, transparent 70%),
+        linear-gradient(180deg, #0a0a1a 0%, #050505 100%);
     position: relative;
+    overflow: hidden;
 }
 
 /* Floating magical particles */
 .hp-background::before {
-    content: '✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧';
+    content: '✦  ✧  ✶  ⊹  ✦  ✧';
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    font-size: 10px;
-    color: rgba(201, 168, 76, 0.15);
-    letter-spacing: 40px;
-    line-height: 80px;
+    left: -10%;
+    width: 120%;
+    font-size: 14px;
+    color: var(--gold);
+    opacity: 0.2;
+    word-spacing: 50px;
+    line-height: 100px;
     pointer-events: none;
-    animation: floatParticles 20s linear infinite;
-    white-space: nowrap;
-    overflow: hidden;
-    z-index: 0;
+    animation: floatParticles 25s linear infinite;
+    z-index: 1;
 }
 
 @keyframes floatParticles {
-    0% {
-        transform: translateY(100vh);
-        opacity: 0;
+    from {
+        transform: translateY(100vh) rotate(0deg);
     }
 
-    10% {
-        opacity: 1;
-    }
-
-    90% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(-100px);
-        opacity: 0;
+    to {
+        transform: translateY(-100vh) rotate(10deg);
     }
 }
 
 /* ──────────────────────────────────────────
-   NAVBAR
+   NAVBAR (The Marauder's Style)
 ────────────────────────────────────────── */
 .navbar {
-    background: linear-gradient(135deg,
-            rgba(13, 3, 3, 0.97) 0%,
-            rgba(30, 5, 5, 0.95) 50%,
-            rgba(13, 3, 3, 0.97) 100%) !important;
-    border-bottom: 1px solid var(--gold-dark);
-    box-shadow:
-        0 4px 30px rgba(201, 168, 76, 0.15),
-        0 1px 0 rgba(201, 168, 76, 0.3),
-        inset 0 -1px 0 rgba(201, 168, 76, 0.1);
-    padding: 0.8rem 1.5rem;
-    position: relative;
-    z-index: 100;
+    background: rgba(10, 10, 10, 0.95) !important;
+    border-bottom: 2px solid var(--gold-dark);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
 }
 
-/* Top gold line accent */
-.navbar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg,
-            transparent 0%,
-            var(--gold-dark) 20%,
-            var(--gold) 50%,
-            var(--gold-dark) 80%,
-            transparent 100%);
-}
-
-/* Corner ornaments */
-.navbar::after {
-    content: '⚡';
-    position: absolute;
-    left: 50%;
-    bottom: -14px;
-    transform: translateX(-50%);
-    font-size: 16px;
-    color: var(--gold);
-    background: #0d0305;
-    padding: 0 8px;
-    text-shadow: 0 0 12px rgba(201, 168, 76, 0.8);
-    animation: glow 3s ease-in-out infinite;
-}
-
-@keyframes glow {
-
-    0%,
-    100% {
-        text-shadow: 0 0 8px rgba(201, 168, 76, 0.5);
-    }
-
-    50% {
-        text-shadow: 0 0 20px rgba(201, 168, 76, 1), 0 0 40px rgba(201, 168, 76, 0.4);
-    }
-}
-
-/* ──────────────────────────────────────────
-   BRAND / LOGO
-────────────────────────────────────────── */
 .navbar-brand {
     font-family: 'Cinzel Decorative', cursive !important;
-    font-size: 1.4rem !important;
-    font-weight: 900 !important;
     color: var(--gold) !important;
-    text-shadow:
-        0 0 10px rgba(201, 168, 76, 0.6),
-        0 0 30px rgba(201, 168, 76, 0.2),
-        2px 2px 4px rgba(0, 0, 0, 0.8);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    position: relative;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--gold-dark);
 }
 
-.navbar-brand:hover {
-    color: var(--gold-light) !important;
-    text-shadow:
-        0 0 15px rgba(240, 208, 96, 0.9),
-        0 0 40px rgba(201, 168, 76, 0.5);
-    transform: scale(1.02);
-}
-
-/* ──────────────────────────────────────────
-   NAV LINKS
-────────────────────────────────────────── */
 .nav-link {
     font-family: 'Cinzel', serif !important;
-    font-size: 0.82rem !important;
-    font-weight: 600 !important;
-    color: rgba(201, 168, 76, 0.75) !important;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 0.5rem 1rem !important;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    right: 50%;
-    height: 1px;
-    background: var(--gold);
-    transition: all 0.3s ease;
-    box-shadow: 0 0 6px var(--gold);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    left: 10%;
-    right: 10%;
+    color: var(--gold) !important;
+    opacity: 0.7;
+    transition: 0.3s;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--gold-light) !important;
-    text-shadow: 0 0 10px rgba(201, 168, 76, 0.6);
-}
-
-.nav-link.disabled {
-    color: rgba(201, 168, 76, 0.25) !important;
-}
-
-/* ──────────────────────────────────────────
-   DROPDOWN
-────────────────────────────────────────── */
-.dropdown-menu {
-    background: linear-gradient(160deg, #1a0505 0%, #100208 100%) !important;
-    border: 1px solid var(--gold-dark) !important;
-    border-top: 2px solid var(--gold) !important;
-    box-shadow:
-        0 10px 40px rgba(0, 0, 0, 0.8),
-        0 0 20px rgba(201, 168, 76, 0.1),
-        inset 0 0 30px rgba(139, 0, 0, 0.05) !important;
-    border-radius: 0 0 6px 6px !important;
-    padding: 0.5rem 0 !important;
-    min-width: 180px !important;
-}
-
-.dropdown-item {
-    font-family: 'Cinzel', serif !important;
-    font-size: 0.78rem !important;
-    color: rgba(201, 168, 76, 0.7) !important;
-    letter-spacing: 1.5px;
-    padding: 0.6rem 1.5rem !important;
-    transition: all 0.2s ease;
-    position: relative;
-}
-
-.dropdown-item::before {
-    content: '⚡ ';
-    opacity: 0;
-    transition: opacity 0.2s;
-    font-size: 10px;
-}
-
-.dropdown-item:hover {
-    background: rgba(201, 168, 76, 0.08) !important;
-    color: var(--gold-light) !important;
-    padding-left: 2rem !important;
-}
-
-.dropdown-item:hover::before {
     opacity: 1;
-}
-
-.dropdown-divider {
-    border-color: rgba(201, 168, 76, 0.2) !important;
-    margin: 0.3rem 1rem !important;
+    text-shadow: 0 0 8px var(--gold-light);
 }
 
 /* ──────────────────────────────────────────
-   SEARCH FORM
+   HOUSE TILES (Creative Layout)
 ────────────────────────────────────────── */
-.form-control {
-    background: rgba(255, 255, 255, 0.04) !important;
-    border: 1px solid var(--gold-dark) !important;
-    color: var(--parchment) !important;
-    font-family: 'IM Fell English', serif !important;
-    font-style: italic;
-    border-radius: 4px !important;
-    transition: all 0.3s ease;
-    font-size: 0.9rem !important;
-}
-
-.form-control::placeholder {
-    color: rgba(201, 168, 76, 0.35) !important;
-    font-style: italic;
-}
-
-.form-control:focus {
-    background: rgba(201, 168, 76, 0.05) !important;
-    border-color: var(--gold) !important;
-    box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12), 0 0 15px rgba(201, 168, 76, 0.1) !important;
-    color: var(--parchment) !important;
-}
-
-.btn-outline-success {
-    font-family: 'Cinzel', serif !important;
-    font-size: 0.75rem !important;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold) !important;
-    border-color: var(--gold-dark) !important;
-    background: transparent !important;
-    transition: all 0.3s ease;
-    padding: 0.375rem 1rem !important;
-}
-
-.btn-outline-success:hover {
-    background: linear-gradient(135deg, rgba(201, 168, 76, 0.15), rgba(139, 0, 0, 0.15)) !important;
-    border-color: var(--gold) !important;
-    color: var(--gold-light) !important;
-    box-shadow: 0 0 15px rgba(201, 168, 76, 0.2) !important;
-}
-
-/* ──────────────────────────────────────────
-   TOGGLER (mobile)
-────────────────────────────────────────── */
-.navbar-toggler {
-    border-color: var(--gold-dark) !important;
-    background: rgba(201, 168, 76, 0.05) !important;
-}
-
-.navbar-toggler-icon {
-    filter: invert(70%) sepia(60%) saturate(400%) hue-rotate(10deg);
-}
-
-/* ──────────────────────────────────────────
-   SCROLLBAR
-────────────────────────────────────────── */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #0a0010;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--gold-dark), var(--deep-maroon));
-    border-radius: 4px;
-}
-
-body {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100vh;
+.house-container {
     display: flex;
     flex-wrap: wrap;
+    height: 400px;
+    /* Adjust as needed */
+    width: 100%;
+    border: 4px solid var(--gold-dark);
+    margin-top: 20px;
+}
+
+.house-tile {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.house-tile:hover {
+    filter: brightness(1.2);
+    transform: scale(0.98);
 }
 
 .gryffindor {
-    width: 50%;
-    height: 50%;
-    background: repeating-linear-gradient(45deg,
-            $gryffindor-gold,
-            $gryffindor-gold 3px,
-            $gryffindor-red 3px,
-            $gryffindor-red 9px,
-            $gryffindor-gold 9px,
-            $gryffindor-gold 10px,
-            $gryffindor-red 10px,
-            $gryffindor-red 30px);
+    background: repeating-linear-gradient(45deg, var(--g-gold), var(--g-gold) 10px, var(--g-red) 10px, var(--g-red) 40px);
 }
 
 .slytherin {
-    width: 50%;
-    height: 50%;
-    background: repeating-linear-gradient(45deg,
-            $slytherin-grey,
-            $slytherin-grey 3px,
-            $slytherin-green 3px,
-            $slytherin-green 9px,
-            $slytherin-grey 9px,
-            $slytherin-grey 10px,
-            $slytherin-green 10px,
-            $slytherin-green 30px,
-        );
+    background: repeating-linear-gradient(45deg, var(--s-silver), var(--s-silver) 10px, var(--s-green) 10px, var(--s-green) 40px);
 }
 
 .ravenclaw {
-    width: 50%;
-    height: 50%;
-    background: repeating-linear-gradient(45deg,
-            $ravenclaw-grey,
-            $ravenclaw-grey 3px,
-            $ravenclaw-blue 3px,
-            $ravenclaw-blue 9px,
-            $ravenclaw-grey 9px,
-            $ravenclaw-grey 10px,
-            $ravenclaw-blue 10px,
-            $ravenclaw-blue 30px,
-        );
+    background: repeating-linear-gradient(45deg, var(--r-bronze), var(--r-bronze) 10px, var(--r-blue) 10px, var(--r-blue) 40px);
 }
 
 .hufflepuff {
-    width: 50%;
-    height: 50%;
-    background: repeating-linear-gradient(45deg,
-            $hufflepuff-black,
-            $hufflepuff-black 3px,
-            $hufflepuff-gold 3px,
-            $hufflepuff-gold 9px,
-            $hufflepuff-black 9px,
-            $hufflepuff-black 10px,
-            $hufflepuff-gold 10px,
+    background: repeating-linear-gradient(45deg, var(--h-black), var(--h-black) 10px, var(--h-gold) 10px, var(--h-gold) 40px);
+}
 
-        );
+/* ──────────────────────────────────────────
+   CUSTOM SCROLLBAR
+────────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--midnight);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--gold-dark), var(--deep-maroon));
+    border-radius: 10px;
+}
+.magic-caption {
+    background: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent black */
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid #ffc107;
+    /* Golden border */
+    text-shadow: 2px 2px 4px #000;
+}
+
+.carousel-item img {
+    height: 60vh;
+    /* Adjust height to your liking */
+    object-fit: cover;
+    filter: sepia(20%) brightness(80%);
+    /* Gives it an aged, wizarding feel */
+}
+
+.carousel-fade .carousel-item {
+    transition-duration: 1s;
+    /* Smoother magical transition */
 }
