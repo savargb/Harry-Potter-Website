@@ -38,7 +38,7 @@ body {
    MAGICAL BACKGROUND & PARTICLES
 ────────────────────────────────────────── */
 .hp-background {
-    min-height: 100vh;
+    min-height: 35vh;
     background:
         radial-gradient(circle at 50% 50%, rgba(61, 0, 0, 0.2) 0%, transparent 70%),
         linear-gradient(180deg, #0a0a1a 0%, #050505 100%);
@@ -187,4 +187,65 @@ body {
 .carousel-fade .carousel-item {
     transition-duration: 1s;
     /* Smoother magical transition */
+}
+body {
+    background-color: #1a1a1a;
+    /* Dark magical feel */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hp-font {
+    font-family: 'Garamond', serif;
+    /* Use a classic serif font */
+    letter-spacing: 2px;
+}
+
+/* Make the carousel images fit well */
+.carousel-item img {
+    height: 70vh;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.magic-caption {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 20px;
+    bottom: 20%;
+}
+
+/* House Card Colors */
+.house-card {
+    transition: transform 0.3s ease;
+    padding: 20px;
+}
+
+.house-card:hover {
+    transform: translateY(-10px);
+}
+
+.gryffindor {
+    background-color: #740001;
+    color: #eeba30;
+}
+
+.slytherin {
+    background-color: #1a472a;
+    color: #aaaaaa;
+}
+
+.ravenclaw {
+    background-color: #0e1a40;
+    color: #946b2d;
+}
+
+.hufflepuff {
+    background-color: #ecb939;
+    color: #000000;
+}
+
+.btn-outline-warning {
+    border-color: #eeba30;
+    color: #eeba30;
 }
