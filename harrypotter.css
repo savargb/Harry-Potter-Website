@@ -249,3 +249,28 @@ body {
     border-color: #eeba30;
     color: #eeba30;
 }
+footer {
+    background-color: #1a1a1a !important;
+    /* Deep charcoal/black */
+    border-top: 2px solid #856404;
+    /* Gold trim */
+}
+
+.hp-font {
+    font-family: 'Garamond', serif;
+    /* Or your specific HP font */
+    letter-spacing: 1px;
+}
+
+footer a:hover {
+    color: #ffc107 !important;
+    /* Bootstrap Warning Gold */
+    transition: 0.3s;
+}
+
+/* Optional: Mischief Managed effect */
+.mischief-hide {
+    opacity: 0.2;
+    filter: grayscale(100%);
+    transition: 2s ease;
+}
