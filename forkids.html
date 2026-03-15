@@ -4,72 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hogwarts | School of Witchcraft and Wizardry</title>
-    <!-- Bootstrap 5.3 -->
+    <title>Hogwarts | Young Wizards Quiz</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="harrypotter.css">
 </head>
 
-<body>
+<body class="hp-background">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-warning">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="HarryPotter.html">⚡ HOGWARTS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hpNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <div class="hp-background">
-        <!-- Magic Navigation Start -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="HarryPotter.html">⚡ HOGWARTS</a>
+            <div class="collapse navbar-collapse" id="hpNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="HarryPotter.html">Great Hall</a></li>
+                    <li class="nav-item"><a class="nav-link" href="historyofhogwarts.html">Library Records</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            Enchantments
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="quizzes.html">Sorting Hat Quiz</a></li>
+                            <li><a class="dropdown-item active" href="forkids.html">Young Wizards</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="jkrowling.html">The Author's Owl</a></li>
+                        </ul>
+                    </li>
+                </ul>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hpNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="hpNav">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="HarryPotter.html">Great Hall</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="historyofhogwarts.html">Library Records</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                Enchantments
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="quizzes.html">Sorting Hat Quiz</a></li>
-                                <li><a class="dropdown-item" href="forkids.html">Young Wizards</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="jkrowling.html">The Author's Owl</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2 rounded-pill" type="search" placeholder="Cast a search spell..."
-                            aria-label="Search">
-                        <button class="btn btn-outline-warning rounded-pill" type="submit">Reveal</button>
-                    </form>
-                </div>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 rounded-pill" type="search" placeholder="Cast a search spell...">
+                    <button class="btn btn-outline-warning rounded-pill" type="submit">Reveal</button>
+                </form>
             </div>
-        </nav>
-        <!-- Magic Navigation End -->
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+        </div>
+    </nav>
     <div class="container text-center my-5">
-        <h2 class="hp-font text-white mb-4">The Young Wizards Quiz</h2>
-        <div class="ratio ratio-16x9" style="max-width: 800px; margin: 0 auto;">
-            <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSe2WNu9fqN7jH2mJ0qnRg7NEn96WwrT-ZEO2-AuF3NV0B8Isg/viewform?usp=dialog"
-                width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">
-                Loading…
-            </iframe>
+        <header class="mb-5">
+            <h2 class="hp-font text-warning display-4">The Young Wizards Quiz</h2>
+            <p class="text-white-50">Test your knowledge of the Wizarding World before your first term!</p>
+        </header>
+
+        <div class="card bg-dark border-warning shadow-lg overflow-hidden" style="max-width: 900px; margin: 0 auto;">
+            <div class="ratio ratio-16x9" style="min-height: 600px;">
+                <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSe2WNu9fqN7jH2mJ0qnRg7NEn96WwrT-ZEO2-AuF3NV0B8Isg/viewform?usp=sf_link"
+                    allowfullscreen>
+                    Loading…
+                </iframe>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <a href="HarryPotter.html" class="btn btn-warning rounded-pill px-4 fw-bold">Return to Great Hall</a>
         </div>
     </div>
+
+    <footer class="bg-dark text-secondary py-4 mt-5 border-top border-secondary">
+        <div class="container text-center">
+            <p class="small mb-0">© 2026 Hogwarts School of Witchcraft and Wizardry</p>
+            <p class="fst-italic text-warning mt-1" style="font-size: 0.8rem;">Draco Dormiens Nunquam Titillandus</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="magic.js"></script>
 </body>
 
 </html>

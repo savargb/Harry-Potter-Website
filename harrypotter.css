@@ -43,7 +43,7 @@ body {
         radial-gradient(circle at 50% 50%, rgba(61, 0, 0, 0.2) 0%, transparent 70%),
         linear-gradient(180deg, #0a0a1a 0%, #050505 100%);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Floating magical particles */
@@ -151,9 +151,7 @@ body {
     background: repeating-linear-gradient(45deg, var(--h-black), var(--h-black) 10px, var(--h-gold) 10px, var(--h-gold) 40px);
 }
 
-/* ──────────────────────────────────────────
-   CUSTOM SCROLLBAR
-────────────────────────────────────────── */
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -273,4 +271,73 @@ footer a:hover {
     opacity: 0.2;
     filter: grayscale(100%);
     transition: 2s ease;
+}
+body {
+    background-color: #1a1a1a;
+    /* Dark magical background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border-width: 2px;
+    border-radius: 15px;
+}
+
+
+.navbar {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-outline-warning:hover {
+    box-shadow: 0 0 15px #ffc107;
+}
+
+/* Adds a slight glow to the house names */
+strong {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.card.bg-dark {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('https://www.transparenttextures.com/patterns/dark-matter.png');
+    border: 2px solid #ffc107 !important;
+}
+
+/* Styling for Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #212529;
+    /* Matches Bootstrap bg-dark */
+    border-left: 1px solid #ffc107;
+    /* Warning yellow border */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffc107;
+    /* Warning yellow */
+    border-radius: 10px;
+    border: 3px solid #212529;
+    /* Creates a padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e0a800;
+    /* Darker gold on hover */
+}
+
+/* Styling for Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ffc107 #212529;
+}
+.custom-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background-color: #ffc107;
+    border-radius: 20px;
 }
