@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+    <html>
+
+    <head>
+
+        <title>Search Bar</title>
+
+    </head>
+
+    <body>
+
+        <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchFunction()">
+
+        <ul id="itemList">
+
+            <li>Apple</li>
+
+            <li>Banana</li>
+
+            <li>Mango</li>
+
+            <li>Orange</li>
+
+            <li>Grapes</li>
+
+        </ul>
+
+        <script>
+
+            function searchFunction() {
+
+                let input = document.getElementById("searchInput").value.toLowerCase();
+
+                let items = document.getElementById("itemList").getElementsByTagName("li");
+
+                for (let i = 0; i < items.length; i++) {
+
+                    let text = items[i].textContent.toLowerCase();
+
+                    if (text.includes(input)) {
+
+                        items[i].style.display = "";
+
+                    } else {
+
+                        items[i].style.display = "none";
+
+                    }
+
+                }
+
+            }
+
+        </script>
+
+    </body>
+
+    </html>

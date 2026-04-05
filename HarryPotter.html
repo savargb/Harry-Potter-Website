@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hogwarts | School of Witchcraft and Wizardry</title>
-    <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="harrypotter.css">
-    <script>
+    <script src="script.js" defer>
         function mischiefManaged() {
             document.body.classList.toggle('mischief-hide');
             alert("I solemnly swear that I am up to no good... and now, mischief managed!");
@@ -19,7 +18,7 @@
 <body>
 
     <div class="hp-background">
-        <!-- Magic Navigation Start -->
+        <!--Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="HarryPotter.html">⚡ HOGWARTS</a>
@@ -52,18 +51,26 @@
                     </ul>
 
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2 rounded-pill" type="search" placeholder="Cast a search spell..."
+                        <input class="form-control me-2 rounded-pill" type="search" placeholder="Cast a spell..."
                             aria-label="Search">
                         <button class="btn btn-outline-warning rounded-pill" type="submit">Reveal</button>
                     </form>
                 </div>
             </div>
         </nav>
-        <!--nav ending-->
-        <!--banner-->
+        <div class="container my-3 d-flex justify-content-center">
+            <div class="position-relative w-50">
+                <input type="text" id="searchInput"
+                    class="form-control rounded-pill px-4 py-2 border-warning bg-dark text-white"
+                    placeholder="🔍 Search houses, characters..." onkeyup="searchFunction()" autocomplete="off">
+                <ul id="searchResults" class="list-group position-absolute w-100 mt-1 shadow"
+                    style="z-index:999; display:none;">
+                </ul>
+            </div>
+        </div>
         <div class="row">
         <div id="hogwartsCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <!-- Indicators (The little dots at the bottom) -->
+            
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#hogwartsCarousel" data-bs-slide-to="0" class="active"></button>
                 <button type="button" data-bs-target="#hogwartsCarousel" data-bs-slide-to="1"></button>

@@ -6,14 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hogwarts | The Author's Owl</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="harrypotter.css">
+
+    <style>
+        :root {
+            --gold: #ffcc33;
+            --pure-white: #ffffff;
+        }
+
+        .hp-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+                url('https://www.transparenttextures.com/patterns/dark-leather.png'), #050505;
+            color: var(--pure-white);
+            font-family: 'Lora', serif;
+        }
+
+        .author-card {
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 30px rgba(255, 204, 33, 0.2);
+            border-radius: 15px;
+        }
+
+        .profile-img {
+            border: 3px solid var(--gold);
+            padding: 5px;
+            background: #222;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
+        }
+
+        .table-dark {
+            background-color: rgba(30, 30, 30, 0.8) !important;
+            border-color: #444;
+        }
+
+        .table-dark th {
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+        }
+
+        .btn-outline-warning:hover {
+            color: #000;
+        }
+
+        .navbar {
+            background-color: #000 !important;
+            border-bottom: 2px solid var(--gold);
+        }
+    </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-warning">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="HarryPotter.html">⚡ HOGWARTS</a>
+            <a class="navbar-brand fw-bold hp-font" href="HarryPotter.html" style="color: var(--gold) !important;">⚡
+                HOGWARTS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hpNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,9 +81,9 @@
                     <li class="nav-item"><a class="nav-link" href="HarryPotter.html">Great Hall</a></li>
                     <li class="nav-item"><a class="nav-link" href="historyofhogwarts.html">Library Records</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button"
+                        <a class="nav-link dropdown-toggle active text-warning" href="#" role="button"
                             data-bs-toggle="dropdown">Enchantments</a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" href="quizzes.html">Sorting Hat Quiz</a></li>
                             <li><a class="dropdown-item" href="forkids.html">Young Wizards</a></li>
                             <li>
@@ -35,119 +94,106 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2 rounded-pill" type="search" placeholder="Cast a search spell...">
-                    <button class="btn btn-outline-warning rounded-pill" type="submit">Reveal</button>
+                    <input class="form-control me-2 rounded-pill bg-dark text-white border-warning" type="search"
+                        placeholder="Cast a search spell...">
+                    <button class="btn btn-warning rounded-pill" type="submit">Reveal</button>
                 </form>
             </div>
         </div>
     </nav>
-    <div class="container my-5">
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-10">
-                <div class="card bg-dark text-light border-warning shadow-lg">
-                    <div class="card-body p-5">
-                        <h2 class="card-title text-warning display-5 fw-bold">J.K. Rowling</h2>
-                        <hr class="border-warning opacity-75">
 
-                        <div class="row align-items-center">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-11 col-lg-10">
+                <div class="card author-card text-light shadow-lg">
+                    <div class="card-body p-4 p-md-5">
+
+                        <div class="row align-items-center mb-5">
                             <div class="col-lg-8">
-                                <p class="lead">
-                                    J.K. Rowling’s life is a famous story of how a great idea and hard work can change
-                                    everything. Born in England in 1965, she loved writing even as a young child.
+                                <h1 class="hp-font text-warning display-4 mb-4">J.K. Rowling</h1>
+                                <p class="lead text-white">
+                                    A journey that began on a delayed train in 1990 changed the landscape of literature
+                                    forever.
                                 </p>
                                 <p>
-                                    The idea for Harry Potter came to her suddenly in 1990 while she was sitting on a
-                                    delayed train. She didn’t have a pen or paper at the time, so she spent the
-                                    four-hour ride dreaming up the details of a magical school and a boy wizard.
+                                    Born in England in 1965, Rowling was a dreamer from the start. The concept of
+                                    <strong>Harry Potter</strong>
+                                    emerged fully formed during a four-hour train delay. Without a pen, she spent the
+                                    journey building
+                                    the foundations of the Wizarding World in her mind.
                                 </p>
                                 <p>
-                                    The next few years were very difficult for her. After living abroad and facing
-                                    personal hardships, she moved to Scotland as a struggling single mother. During this
-                                    time, she sat in cafes while her daughter slept and finished the first Harry Potter
-                                    book. She was rejected by 12 different publishers before a small company called
-                                    Bloomsbury finally said "yes" in 1997.
-                                </p>
-                                <p>
-                                    Today, she is one of the most successful authors in history. Beyond the wizarding
-                                    world, she writes popular detective stories under the name Robert Galbraith and
-                                    spends much of her time giving to charities like Lumos.
+                                    Her path to success was not easy. Writing as a struggling single mother in Edinburgh
+                                    cafes, she faced
+                                    rejection from <strong>12 different publishers</strong> before Bloomsbury finally
+                                    took a chance on the
+                                    boy who lived in 1997.
                                 </p>
                             </div>
                             <div class="col-lg-4 text-center">
                                 <img src="images (1).jpeg" alt="J.K. Rowling"
-                                    class="img-fluid rounded border border-warning shadow"
-                                    style="max-height: 400px; object-fit: cover;">
+                                    class="img-fluid rounded-circle profile-img shadow-lg"
+                                    style="width: 280px; height: 280px; object-fit: cover;">
                             </div>
                         </div>
 
-                        <hr class="border-warning my-4">
+                        <hr class="border-warning opacity-50 my-5">
 
-                        To complete "The Author's Owl" page, we should add a section for her famous works (The Bibliography) and connect your
-                        external script so that the "Search Spells" work here too.
-                        
-                        I have also added a "Back to Great Hall" button to improve navigation.
-                        
-                        📝 Completed Author Page Code
-                        Replace the bottom section of your HTML (from the house traits row down) with this:
-                        
-                        HTML
-                        <div class="row text-center">
-                            <div class="col-3"><strong>Gryffindor</strong><br><small class="text-warning">Bravery</small></div>
-                            <div class="col-3"><strong>Hufflepuff</strong><br><small class="text-warning">Loyalty</small></div>
-                            <div class="col-3"><strong>Ravenclaw</strong><br><small class="text-warning">Intelligence</small></div>
-                            <div class="col-3"><strong>Slytherin</strong><br><small class="text-warning">Ambition</small></div>
+                        <h3 class="text-warning hp-font mb-4">The Bibliography</h3>
+                        <div class="table-responsive">
+                            <table class="table table-dark table-hover border-secondary text-white">
+                                <thead>
+                                    <tr>
+                                        <th>Series / Title</th>
+                                        <th>First Published</th>
+                                        <th>Notable Fact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold">Harry Potter</td>
+                                        <td>1997</td>
+                                        <td>Over 500 million copies sold worldwide.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Cormoran Strike</td>
+                                        <td>2013</td>
+                                        <td>Written under the pseudonym <em>Robert Galbraith</em>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">The Ickabog</td>
+                                        <td>2020</td>
+                                        <td>A fairy tale published for free during the lockdown.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Fantastic Beasts</td>
+                                        <td>2001 / 2016</td>
+                                        <td>Expanded from a textbook into a major film series.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        
-                        <div class="mt-5">
-                            <h4 class="text-warning hp-font">Notable Works</h4>
-                            <div class="table-responsive">
-                                <table class="table table-dark table-hover mt-3 border-secondary">
-                                    <thead>
-                                        <tr>
-                                            <th>Series</th>
-                                            <th>First Published</th>
-                                            <th>Key Fact</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Harry Potter</td>
-                                            <td>1997</td>
-                                            <td>Translated into over 80 languages.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cormoran Strike</td>
-                                            <td>2013</td>
-                                            <td>Written under the pen name Robert Galbraith.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>The Ickabog</td>
-                                            <td>2020</td>
-                                            <td>Published for free online during the lockdown.</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+
+                        <div class="text-center mt-5">
+                            <a href="HarryPotter.html" class="btn btn-outline-warning btn-lg rounded-pill px-5 hp-font">
+                                ← Back to the Great Hall
+                            </a>
                         </div>
-                        
-                        <div class="text-center mt-4">
-                            <a href="HarryPotter.html" class="btn btn-outline-warning rounded-pill px-4">Return to the Great Hall</a>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                        
-                        <footer class="text-center py-4 text-secondary small">
-                            <p>© 2026 Hogwarts School of Witchcraft and Wizardry</p>
-                        </footer>
-                        
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-                        
-                        <script src="magic.js"></script>
-                        </body>
-                        
-                        </html>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-5 text-secondary">
+        <p class="mb-1">© 2026 Hogwarts School of Witchcraft and Wizardry</p>
+        <p class="small text-warning">"Words are, in my not-so-humble opinion, our most inexhaustible source of magic."
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="magic.js"></script>
+</body>
 
 </html>

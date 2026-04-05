@@ -5,22 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hogwarts | School of Witchcraft and Wizardry</title>
-    <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="harrypotter.css">
-    <script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=IM+Fell+English+SC&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        
+        .mischief-hide {
+            filter: grayscale(1) sepia(0.5) blur(2px);
+            transition: 2s;
+        }
+
+        
+        body {
+            background-color: #1a1a1a;
+            font-family: 'Playfair Display', serif;
+            color: #2a2a2a;
+        }
+
+        .prophet-container {
+            background: #fffdf5;
+            background-image: url('https://www.transparenttextures.com/patterns/p6.png');
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 40px;
+            border: 1px solid #d3c4a0;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .prophet-header {
+            text-align: center;
+            border-bottom: 5px double #2a2a2a;
+            margin-bottom: 25px;
+        }
+
+        .prophet-title {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        .moving-photo {
+            filter: sepia(0.3) contrast(1.1);
+            border: 3px solid #2a2a2a;
+            animation: move-photo 6s ease-in-out infinite;
+            width: 100%;
+        }
+
+        @keyframes move-photo {
+
+            0%,
+            100% {
+                transform: scale(1);
+                filter: sepia(0.3);
+            }
+
+            50% {
+                transform: scale(1.03);
+                filter: sepia(0.1);
+            }
+        }
+
+        .hp-font {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            text-shadow: 1px 1px 2px black;
+        }
+    </style>
+
+    <script src="magic.js">
         function mischiefManaged() {
             document.body.classList.toggle('mischief-hide');
             alert("I solemnly swear that I am up to no good... and now, mischief managed!");
         }
+
     </script>
-    
 </head>
 
 <body>
 
     <div class="hp-background">
-        <!-- Magic Navigation Start -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="HarryPotter.html">⚡ HOGWARTS</a>
@@ -60,76 +128,67 @@
                 </div>
             </div>
         </nav>
-        <body>
-            <section class="bg-light py-5">
-                <div class="container">
-                    <h2 class="text-center mb-5 hp-font" style="color: #2a2a2a;">The Daily Prophet</h2>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="p-4 border shadow-sm bg-white mb-4">
-                                <span class="badge bg-danger mb-2">Breaking News</span>
-                                <h3>Mass Breakout from Azkaban!</h3>
-                                <p class="text-muted">LONDON — The Ministry of Magic confirmed in the early hours of this morning that a catastrophic security breach has
-                                occurred at Azkaban Fortress. Ten "high-security" prisoners—among them some of the most depraved criminals ever to be
-                                sentenced by the Wizengamot—have vanished from their cells.
-                                
-                                Minister for Magic Cornelius Fudge appeared visibly shaken when he addressed reporters at an emergency press conference
-                                in the Atrium.
-                                <br>
-                                "We have a strong suspicion that the breakout was led by none other than the notorious mass-murderer Sirius Black,"
-                                Fudge stated, clutching his lime-green bowler hat. "It is our belief that Black, using the same dark methods he employed
-                                to escape two years ago, orchestrated this mass exodus to rally what remains of his former master's fanatical
-                                followers."
-                                <br>
-                                <br>
-                            <strong>THE ESCAPEES: A ROGUES' GALLERY</strong>
-                            <br>
-                            The Ministry has released the names of the "Inner Circle" fugitives. The public is warned that these individuals are
-                            extremely dangerous and should not be approached under any circumstances:
-                            <ul>
-                                <li>Antonin Dolohov: Convicted of the brutal murders of the Prewetts.</li>
-                                
-                                <li>Augustus Rookwood: A former Ministry Unspeakable turned spy.</li>
-                                
-                                <li>Bellatrix Lestrange: Sentenced to life for the torture of the Longbottoms.</li>
-                                
-                                <li>Algernon Rookwood & The Mulcibers: Experts in the Imperius Curse.</li>
-                            </ul>
+        <div class="container">
+            <div class="prophet-container">
+                <header class="prophet-header">
+                    <h1 class="prophet-title">The Daily Prophet</h1>
+                    <div class="d-flex justify-content-between px-2 fw-bold" style="font-family: 'IM Fell English SC';">
+                        <span>VOL. CCXVIII... NO. 421</span>
+                        <span>LONDON: FRIDAY</span>
+                        <span>PRICE: 5 KNUTS</span>
+                    </div>
+                </header>
 
-                            <br>
-            </p>
-            <p><h2>DEMENTORS: LOYAL GUARDS OR SILENT ALLIES?</h2>
-        <br>
-        While Dementors are currently "patrolling the perimeter" of the island fortress, many are asking how ten
-        wizards—weakened by years of exposure to the Dementor's Kiss—could possibly bypass the most stringent magical
-        protections in the world.
-        
-        Sources within the Department of Magical Law Enforcement suggest the Dementors may have simply allowed the prisoners to
-        walk out. When asked for comment, the Ministry dismissed such "scaremongering" as the work of Albus Dumbledore and his
-        agitators.
+                <div class="row">
+                    <div class="col-lg-8 border-end border-dark pe-lg-4">
+                        <span class="badge bg-danger mb-2">Breaking News</span>
+                        <h2 class="fw-bold text-uppercase" style="letter-spacing: -1px;">Mass Breakout from Azkaban!
+                        </h2>
 
-        <br>
-        <br>
-        <br>
-        <h2>WHAT THIS MEANS TO YOU:</h2>
-        <br>
-        A state of emergency has been declared. The Ministry has issued the following mandates:
-        <ul>
-            <li><strong>CURFEW:</strong> All wizarding households are advised to be behind locked doors by sundown.</li>
-            <li><strong>FLOO WATCH:</strong> The Floo Network is being monitored for "irregular travel signatures."</li>
-            <li><strong>REWARD:</strong> A bounty of 10,000 Galleons is offered for information leading to the capture of any escapee.</li>
-        </ul>
-        </p>
-        <div class="col-lg-4 text-center">
-            <img src="images (2).jpeg" alt="J.K. Rowling" class="img-fluid rounded border border-warning shadow"
-                style="max-height: 400px; object-fit: cover;">
+                        <p class="mt-3"><strong>LONDON —</strong> The Ministry of Magic confirmed in the early hours of
+                            this morning that a catastrophic security breach has occurred at Azkaban Fortress. Ten
+                            "high-security" prisoners have vanished from their cells.</p>
+
+                        <div class="my-4 text-center">
+                            <img src="bellatrix.jpg"
+                                class="moving-photo" alt="Bellatrix Lestrange">
+                            <p class="small mt-2"><em>FUGITIVE SPOTTED: Bellatrix Lestrange among the escapees.</em></p>
+                        </div>
+
+                        <p>Minister for Magic Cornelius Fudge stated: "We have a strong suspicion that the breakout was
+                            led by none other than the notorious mass-murderer Sirius Black."</p>
+
+                        <h4 class="hp-font mt-4 border-top border-dark pt-3">The Escapees: A Rogues' Gallery</h4>
+                        <ul>
+                            <li><strong>Antonin Dolohov:</strong> Convicted of the murders of the Prewetts.</li>
+                            <li><strong>Augustus Rookwood:</strong> Former Unspeakable.</li>
+                            <li><strong>Bellatrix Lestrange:</strong> Sentenced for the torture of the Longbottoms.</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 ps-lg-4">
+                        <div class="p-3 border border-dark bg-light mb-4">
+                            <h5 class="hp-font text-center">Ministry Mandates</h5>
+                            <hr>
+                            <p class="small"><strong>CURFEW:</strong> All households advised to be behind locked doors
+                                by sundown.</p>
+                            <p class="small"><strong>REWARD:</strong> 10,000 Galleons for any information leading to
+                                capture.</p>
+                        </div>
+
+                        <div class="text-center">
+                            <h6 class="fw-bold text-uppercase border-bottom border-dark pb-2">Wanted Wizard</h6>
+                            <img src="ahh-screaming.gif"
+                                class="moving-photo rounded-circle"
+                                style="width: 150px; height: 150px; object-fit: cover;" alt="Sirius Black">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-                        
-           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-                        
-         <script src="magic.js"></script>
-    </body>
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

@@ -6,14 +6,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hogwarts | Library Records</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="harrypotter.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #ffcc33;
+            --pure-white: #ffffff;
+            --card-bg: rgba(0, 0, 0, 0.9);
+        }
+
+        .hp-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        body.hp-background {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+                url('https://www.transparenttextures.com/patterns/dark-leather.png'), #050505;
+            color: var(--pure-white);
+            font-family: 'Lora', serif;
+            line-height: 1.6;
+        }
+
+        .library-card {
+            background: var(--card-bg);
+            border: 2px solid #444;
+            border-left: 5px solid var(--gold);
+            transition: 0.3s;
+            margin-bottom: 2rem;
+            color: var(--pure-white) !important;
+        }
+
+        .library-card p,
+        .library-card div,
+        .library-card li {
+            color: var(--pure-white) !important;
+        }
+
+        .library-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 25px rgba(255, 204, 51, 0.25);
+        }
+
+        .card-title {
+            color: var(--gold) !important;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #555;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .lore-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 204, 51, 0.3);
+            font-style: italic;
+            margin-top: 15px;
+            color: var(--pure-white) !important;
+        }
+
+        .navbar {
+            background-color: #000 !important;
+            border-bottom: 2px solid var(--gold) !important;
+        }
+
+        .text-info-custom {
+            color: #82ccdd !important;
+            font-weight: bold;
+        }
+
+        .text-danger-custom {
+            color: #ff5e5e !important;
+            font-weight: bold;
+        }
+
+        .text-success-custom {
+            color: #78e08f !important;
+            font-weight: bold;
+        }
+
+        .text-warning-custom {
+            color: #f6e58d !important;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body class="hp-background">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-warning">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="HarryPotter.html">⚡ HOGWARTS</a>
+            <a class="navbar-brand fw-bold hp-font" href="HarryPotter.html" style="color: var(--gold) !important;">⚡
+                HOGWARTS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hpNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -21,12 +107,12 @@
             <div class="collapse navbar-collapse" id="hpNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="HarryPotter.html">Great Hall</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="historyofhogwarts.html">Library Records</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active text-white" href="historyofhogwarts.html">Library
+                            Records</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown">Enchantments</a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" href="quizzes.html">Sorting Hat Quiz</a></li>
                             <li><a class="dropdown-item" href="forkids.html">Young Wizards</a></li>
                             <li>
@@ -36,94 +122,113 @@
                         </ul>
                     </li>
                 </ul>
-
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2 rounded-pill" type="search" placeholder="Cast a search spell...">
-                    <button class="btn btn-outline-warning rounded-pill" type="submit">Reveal</button>
+                    <input class="form-control me-2 rounded-pill bg-dark text-white border-warning" type="search"
+                        placeholder="Search the archives...">
+                    <button class="btn btn-warning rounded-pill px-4" type="submit">Reveal</button>
                 </form>
             </div>
         </div>
     </nav>
+
     <div class="container my-5">
-        <header class="text-center mb-5 text-warning">
-            <h1 class="display-4 fw-bold hp-font">Hogwarts: A History</h1>
-            <p class="lead italic text-white-50">The Castle is a stronghold of ancient magic built when magic was feared
-                by muggles.</p>
+        <header class="text-center mb-5">
+            <h1 class="display-3 fw-bold hp-font" style="color: var(--gold);">Hogwarts: A History</h1>
+            <p class="fs-4 italic text-white-50">Archive maintained by Madam Pince</p>
         </header>
 
-        <div class="row g-4">
-            <div class="col-md-12">
-                <div class="card bg-dark text-light border-warning shadow-lg">
-                    <div class="card-body p-4">
-                        <h2 class="card-title text-warning hp-font">The Four Founders (c. 990 AD)</h2>
-                        <p>Hogwarts was founded over a thousand years ago by the four most brilliant witches and wizards
-                            of their time: <strong>Godric Gryffindor</strong>, <strong>Helga Hufflepuff</strong>,
-                            <strong>Rowena Ravenclaw</strong>, and <strong>Salazar Slytherin</strong>. They built this
-                            castle together, far from prying muggle eyes, to create a safe-haven for magical education.
+        <div class="row">
+            <div class="col-12">
+                <div class="card library-card shadow-lg">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title hp-font">The Founders & The Sorting Hat</h2>
+                        <p class="fs-5">
+                            Over a thousand years ago, the four greatest witches and wizards of the age—<strong>Godric
+                                Gryffindor</strong>, <strong>Helga Hufflepuff</strong>, <strong>Rowena
+                                Ravenclaw</strong>, and <strong>Salazar Slytherin</strong>—pooled their magic to build
+                            Hogwarts. To ensure students were placed in the right houses after they were gone,
+                            Gryffindor enchanted his own hat with the combined intelligence of all four founders.
                         </p>
-                        <hr class="border-warning">
-                        <div class="row text-center">
-                            <div class="col-3"><strong class="text-danger">Gryffindor</strong><br><small>Bravery</small>
+                        <div class="row text-center mt-4 g-2">
+                            <div class="col-md-3">
+                                <div class="p-2 border border-secondary rounded"><span
+                                        class="text-danger-custom">Gryffindor</span><br>Bravery & Nerve</div>
                             </div>
-                            <div class="col-3"><strong
-                                    class="text-warning">Hufflepuff</strong><br><small>Loyalty</small></div>
-                            <div class="col-3"><strong
-                                    class="text-info">Ravenclaw</strong><br><small>Intelligence</small></div>
-                            <div class="col-3"><strong
-                                    class="text-success">Slytherin</strong><br><small>Ambition</small></div>
+                            <div class="col-md-3">
+                                <div class="p-2 border border-secondary rounded"><span
+                                        class="text-warning-custom">Hufflepuff</span><br>Loyalty & Hard Work</div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-2 border border-secondary rounded"><span
+                                        class="text-info-custom">Ravenclaw</span><br>Wit & Learning</div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-2 border border-secondary rounded"><span
+                                        class="text-success-custom">Slytherin</span><br>Cunning & Ambition</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6">
-                <div class="card h-100 bg-dark text-light border-secondary shadow">
+                <div class="card library-card h-100">
                     <div class="card-body">
-                        <h3 class="text-warning hp-font">The Triwizard Tradition</h3>
-                        <p>A magical contest held between the three largest wizarding schools of Europe:
-                            <strong>Hogwarts</strong>, <strong>Durmstrang</strong>, and <strong>Beauxbatons</strong>. It
-                            was discontinued in 1792 due to its high death toll until its revival in 1994, which
-                            famously saw the return of the Dark Lord.</p>
+                        <h3 class="card-title hp-font">The Moving Staircases</h3>
+                        <p>The castle is famous for its <strong>142 staircases</strong>. They range from grand marble
+                            flights to narrow, winding ones. Most remarkably, they move on their own, often changing
+                            destination while students are still on them. This sentient architecture is part of the
+                            castle's ancient defense system.</p>
+                        <div class="lore-box">
+                            "There are also doors that wouldn't open unless you asked them politely, or tickled them in
+                            exactly the right place."
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6">
-                <div class="card h-100 bg-dark text-light border-secondary shadow">
+                <div class="card library-card h-100">
                     <div class="card-body">
-                        <h3 class="text-warning hp-font">The Restricted Section</h3>
-                        <p>Home to books of powerful Dark Magic and advanced enchantments. Entrance is strictly
-                            forbidden without a signed note from a professor. Many of these volumes are capable of
-                            physical harm to the unprepared reader.</p>
+                        <h3 class="card-title hp-font">The Chamber of Secrets</h3>
+                        <p>Salazar Slytherin left the school after a dispute regarding the admission of Muggle-born
+                            students. Before leaving, he secretly constructed a hidden chamber. According to legend,
+                            only the <strong>Heir of Slytherin</strong> can open the entrance (hidden in a girls'
+                            bathroom) and control the ancient Basilisk dwelling within.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-12">
-                <div class="card bg-dark text-light border-danger shadow-lg">
+            <div class="col-12 mt-4">
+                <div class="card library-card">
                     <div class="card-body p-4">
-                        <h3 class="text-danger hp-font">The Battle of Hogwarts</h3>
-                        <p>The final conflict of the Second Wizarding War, occurring on <strong>2 May 1998</strong>.
-                            Students, teachers, and members of the Order of the Phoenix made their final stand against
-                            Lord Voldemort and his Death Eaters to secure the future of the wizarding world.</p>
+                        <h3 class="card-title hp-font">The Enchanted Ceiling</h3>
+                        <p class="fs-5">
+                            The Great Hall serves as the heart of Hogwarts. Its ceiling is famously bewitched to mirror
+                            the actual sky outside, whether it be a clear starry night or a raging thunderstorm.
+                            Thousands of <strong>floating candles</strong> illuminate the hall during feasts, held aloft
+                            by permanent hovering charms.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="text-center mt-5">
-            <a href="HarryPotter.html" class="btn btn-outline-warning rounded-pill">Return to the Great Hall</a>
+            <a href="HarryPotter.html" class="btn btn-outline-warning btn-lg rounded-pill px-5 hp-font">
+                ← Return to the Great Hall
+            </a>
         </div>
     </div>
 
-    <footer class="bg-dark text-secondary py-4 mt-5 border-top border-warning">
-        <div class="container text-center">
-            <p class="small mb-0">© 2026 Hogwarts School of Witchcraft and Wizardry Library</p>
+    <footer class="bg-dark text-secondary py-5 mt-5 border-top border-warning text-center">
+        <div class="container">
+            <p class="text-white mb-0">© 2026 Hogwarts School of Witchcraft and Wizardry Library</p>
+            <p class="small text-warning">Knowledge is the ultimate magic.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="magic.js"></script>
 </body>
 
 </html>
